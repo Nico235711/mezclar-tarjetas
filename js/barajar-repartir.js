@@ -1,8 +1,3 @@
-const grupoTarjetas = ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "👺"];
-
-// EJERCICIO: concatena grupoTarjetas consigo misma para duplicar
-// los valores
-const totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 
 function barajaTarjetas() {
   let resultado;
@@ -22,7 +17,7 @@ function reparteTarjetas() {
   // Añade además el valor del elemento como contenido de la tarjeta
   tarjetasBarajadas.forEach(elemento => {
     let divTarjeta = document.createElement("div")
-    divTarjeta.innerHTML = `<div class="tarjeta">
+    divTarjeta.innerHTML = `<div class="tarjeta" data-valor=\`${elemento}\`>
       <div class="tarjeta__contenido">
         ${elemento}
       </div>
@@ -33,18 +28,4 @@ function reparteTarjetas() {
     // loop, añade la tarjeta generada como "child" del nodo mesa.
     mesa.append(divTarjeta)
   })
-  
-
-  // BONUS: podrías hacer que las tarjetas solo se repartieran cuando
-  // se apriete un botón que ponga "repartir cartas"
 }
-
-function descubrir() {
-  this.classList.add("descubierta");
-}
-
-reparteTarjetas();
-
-document.querySelectorAll(".tarjeta").forEach(function(elemento) {
-  elemento.addEventListener("click", descubrir);
-});
