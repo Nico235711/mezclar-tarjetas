@@ -3,12 +3,14 @@ function acertar(tarjetas) {
   tarjetas.forEach(elemento => {
     elemento.classList.add("acertada")
   })
+  document.querySelector("#sonido-acierto").cloneNode().play()
 }
 
-function error(tarjetas) {
+function errar(tarjetas) {
   tarjetas.forEach(elemento => {
     elemento.classList.add("error")
   })
+  document.querySelector("#sonido-error").play()
 
   setTimeout(() => {
 
