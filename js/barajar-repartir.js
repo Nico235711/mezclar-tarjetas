@@ -1,13 +1,17 @@
 
-function barajaTarjetas() {
+function barajarTarjetas(tarjetas) {
   let resultado;
+
+  // EJERCICIO: concatena tarjetas consigo misma para duplicar
+  // los valores
+  const totalTarjetas = tarjetas.concat(tarjetas);
   resultado = totalTarjetas.sort(() => 0.5 - Math.random());
   return resultado;
 }
 
-function reparteTarjetas() {
+function repartirTarjetas(tarjetas) {
   const mesa = document.querySelector("#mesa");
-  const tarjetasBarajadas = barajaTarjetas();
+  const tarjetasBarajadas = barajarTarjetas(tarjetas);
   mesa.innerHTML = "";
 
   // EJERCICIO: recorre el array de tarjetasBarajadas y para cada
